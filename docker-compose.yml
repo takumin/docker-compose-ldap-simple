@@ -6,7 +6,7 @@ services:
   #
   openldap-build:
     build:
-      context: .
+      context: openldap
       dockerfile: Dockerfile
       target: build
     image: takumi/openldap:build
@@ -21,7 +21,7 @@ services:
   #
   openldap:
     build:
-      context: .
+      context: openldap
       dockerfile: Dockerfile
       target: prod
     image: takumi/openldap:latest
@@ -45,7 +45,7 @@ services:
   #
   ldap-account-manager-build:
     build:
-      context: .
+      context: ldap-account-manager
       dockerfile: Dockerfile
       target: build
     image: takumi/ldap-account-manager:build
@@ -53,14 +53,14 @@ services:
     container_name: ldap-account-manager-build
     command: /bin/true
     networks:
-      - ldap-account-manager
+      - simple-ldap
 
   #
   # service
   #
   ldap-account-manager:
     build:
-      context: .
+      context: ldap-account-manager
       dockerfile: Dockerfile
       target: prod
     image: takumi/ldap-account-manager:latest
