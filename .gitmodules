@@ -1,0 +1,6 @@
+[submodule "openldap"]
+	path = openldap
+	url = https://github.com/takumin/docker-openldap.git
+[submodule "ldap-account-manager"]
+	path = ldap-account-manager
+	url = https://github.com/takumin/docker-ldap-account-manager.git
